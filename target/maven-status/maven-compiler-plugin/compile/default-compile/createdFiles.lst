@@ -1,0 +1,4 @@
+com\Boot\BootApplication.class
+com\Boot\webApp\model\User.class
+com\Boot\webApp\controller\UserController.class
+com\Boot\webApp\controller\StartController.class

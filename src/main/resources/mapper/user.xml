@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.Boot.MybatisMode.dao.UserDao">
+
+    <select id="getUserById" parameterType="java.lang.Integer" resultType="String">
+        select a.name from account a where a.id= #{id}
+    </select>
+
+
+    <select id="showUser" parameterType="java.lang.Integer" resultType="com.Boot.MybatisMode.Entity.User">
+        select * from account a where a.id= #{id}
+    </select>
+
+    <select id="showList" resultType="com.Boot.MybatisMode.Entity.User">
+        select * from account
+    </select>
+
+</mapper>
