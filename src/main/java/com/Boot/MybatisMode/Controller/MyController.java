@@ -30,7 +30,6 @@ public class MyController {
 
     @RequestMapping("/show")
     public String show(HttpServletRequest request, Model model) {
-        //int userId = Integer.parseInt(request.getParameter("id"));
         User user = userService.show(1);
         model.addAttribute("user", user);
         return "user/show";
@@ -43,5 +42,22 @@ public class MyController {
         return "user/showList";
     }
 
+    @RequestMapping("/showLike")
+    public String showLike(HttpServletRequest request, Model model) {
+        String nameLike = "c";
+        List<User> list = userService.queryLike(nameLike);
+        model.addAttribute("list", list);
+        return "user/showList";
+    }
 
+    @RequestMapping("/addUser")
+    public String addUser(HttpServletRequest request, Model model) {
+        User user = new User();
+        user.setMoney(560);
+        user.setName("西八");
+        userService.addUser(user);
+        model.addAttribute("id", user.getId());
+        System.out.println("id="+user.getId());
+        return "user/demo";
+    }
 }

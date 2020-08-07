@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.Boot.MybatisMode.dao.UserDao">
 
+
     <select id="getUserById" parameterType="java.lang.Integer" resultType="String">
         select a.name from account a where a.id= #{id}
     </select>
@@ -14,5 +15,17 @@
     <select id="showList" resultType="com.Boot.MybatisMode.Entity.User">
         select * from account
     </select>
+
+    <select id="showNameLikeC"  resultType="com.Boot.MybatisMode.Entity.User">
+        select * from account a where a.name like 'c%'
+    </select>
+
+    <select id="showNameLike"  resultType="User">
+        select * from account a where a.name like "%"#{name}"%"
+    </select>
+
+    <insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        insert into account(name,money) values(#{name},#{money})
+    </insert>
 
 </mapper>

@@ -11,4 +11,8 @@ public interface UserService {
 
     public List<User> showList();
 
+    public List<User> queryLike(String name);
+
+    public int addUser(User user);
+
 }

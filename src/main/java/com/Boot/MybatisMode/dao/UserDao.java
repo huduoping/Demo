@@ -17,4 +17,7 @@ public interface UserDao {
 
     public List<User> showList();
 
+    public List<User> showNameLike(String name);
+
+    public int addUser(User user);
 }

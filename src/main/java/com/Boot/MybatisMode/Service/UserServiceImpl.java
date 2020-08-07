@@ -31,4 +31,14 @@ public class UserServiceImpl implements UserService {
         return userDao.showList();
     }
 
+    @Override
+    public List<User> queryLike(String name) {
+        return userDao.showNameLike(name);
+    }
+
+    @Override
+    public int addUser(User user) {
+        return userDao.addUser(user);
+    }
+
 }
